@@ -6,4 +6,10 @@
 <p><%= @restaurant.phone_number %></p>
 <p><%= @restaurant.category %></p>
 
-<%= link_to '🔙Back to list', restaurants_path %>
+<%= render "form_review", review: @review %>
+<%= link_to 'Back to list', restaurants_path, class: "btn btn-primary" %>
+
+
+<% @restaurant.reviews.each do |review| %>
+<li><%= review.content %> <%= review.rating %>/5 </li>
+<% end %>

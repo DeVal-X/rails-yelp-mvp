@@ -1,12 +1,12 @@
 class RestaurantsController < ApplicationController
-  before_action :set_task, only: [:show]
+  before_action :set_restaurant, only: [:show]
 
   def index
     @restaurants = Restaurant.all
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -14,15 +14,18 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.save
-    redirect_to restaurants_path
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+    redirect_to restaurant_path(@restaurant)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def restaurant_params
-    params.require(:task).permit(:name, :address, :phone_number, :category)
+    params.require(:restaurant).permit(:name, :address, :phone_number, :category)
   end
 
   def set_restaurant

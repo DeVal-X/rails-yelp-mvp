@@ -2,7 +2,9 @@
 <p>Find me in app/views/restaurants/index.html.erb</p>
 
 <% @restaurants.each do |restaurant| %>
-<li><%=restaurant.address%>,  <%= restaurant.address%>,  <%= restaurant.phone_number %> </li>
+<li class="resto-list"><%=restaurant.address%>,  <%= restaurant.name%>,  <%= restaurant.phone_number %> 
+<%= link_to 'restaurant details', restaurant_path(restaurant), class:"params-button btn btn-primary"%></li>
 <% end %>
 
-<%= link_to '➕ Add a task', new_task_path %>
+<%= link_to 'Add a restaurant', new_restaurant_path, class:"params-button btn btn-primary" %>
+<i class="fa-solid fa-plus-minus"></i>

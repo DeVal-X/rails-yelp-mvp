@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  background-color: rgb(185, 175, 162);
+ }
+
+ li {
+  list-style: none;
+ }
+
+ a {
+  text-decoration: none;
+ }
+
+ .main-container {
+  background-color: rgb(240, 240, 240);
+  border: 1px solid rgb(88, 88, 88);
+  box-shadow: 1px 1px 10px rgb(143, 143, 143);
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  min-width: 450px;
+ }
+
+.resto-list {
+  border: 1px solid rgb(88, 88, 88);
+  box-shadow: 1px 2px 5px rgb(168, 168, 168);
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.params-button {
+  margin: 20px 4px;
+}
